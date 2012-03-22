@@ -1,5 +1,0 @@
-2 flows to '/home/jason/pna_transfer/logs/pna-20120319145653-table0.log' processed in 0.022868 seconds (sleeping for 10 seconds)
-0 flows to '/home/jason/pna_transfer/osflogs/osf-20120319145653-table0.log' processed in 0.029360 seconds (sleeping for 10 seconds)
-1 flows to '/home/jason/pna_transfer/logs/pna-20120319145703-table0.log' processed in 0.026950 seconds (sleeping for 10 seconds)
-2 flows to '/home/jason/pna_transfer/osflogs/osf-20120319145703-table0.log' processed in 0.025351 seconds (sleeping for 10 seconds)
-open proc_file: No such file or directory
