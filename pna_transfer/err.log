@@ -1,0 +1,8 @@
+osf_monitor.c: In function ‘dump_table’:
+osf_monitor.c:122:40: error: invalid type argument of ‘->’ (have ‘struct pna_flowkey’)
+osf_monitor.c: In function ‘main’:
+osf_monitor.c:251:21: warning: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘__time_t’ [-Wformat]
+osf_monitor.c:251:21: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘__suseconds_t’ [-Wformat]
+osf_monitor.c:251:21: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 4 has type ‘__time_t’ [-Wformat]
+make[1]: *** [osf_monitor] Error 1
+make: *** [user/osf_monitor] Error 2
