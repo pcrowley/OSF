@@ -1,0 +1,4 @@
+sudo ./log_read
+diff raw_log.osf single_test.chk
+echo "Done"
+sudo rmmod pna

@@ -1,0 +1,15 @@
+echo "Rebuilding userspace programs"
+rm control_read db_load log_read osf_control p0f_convert convert_log
+gcc -w control_read.c -o control_read
+gcc -w db_load.c -o db_load
+gcc -w log_read.c -o log_read
+gcc -w osf_control.c -o osf_control
+gcc -w p0f_convert.c -o p0f_convert
+gcc -w convert_log.c -o convert_log
+gcc -w auto_log.c -o auto_log
+echo "Rebuilding kernel module"
+cd module
+rm *.o *.ko
+cd ..
+make
+echo "Done"

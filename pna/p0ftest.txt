@@ -1,0 +1,2835 @@
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 4
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 5
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 6
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 7
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.6.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 6
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.6.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 7
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.6.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 8
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 1
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 2
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.2.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 11
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.2.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 20
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.2.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 22
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.0opt_hash: 3
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 12
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.0opt_hash: 3
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.x (loopback)opt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 16396
+win: 2
+win_type: 2
+win_scale: 4
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.x (loopback)opt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 16376
+win: 2
+win_type: 2
+win_scale: 4
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.6.x (loopback)opt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 16396
+win: 2
+win_type: 2
+win_scale: 2
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.6.x (loopback)opt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 16376
+win: 2
+win_type: 2
+win_scale: 2
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4.x (loopback)opt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 16396
+win: 2
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.2.x (loopback)opt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 3884
+win: 8
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.6.x (Google crawleopt_hash: 20744
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 64
+mss: 1430
+win: 4
+win_type: 2
+win_scale: 6
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: (Android)opt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 44
+win_type: 2
+win_scale: 1
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: (Android)opt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 44
+win_type: 2
+win_scale: 3
+pay_class: 1
+
+OS Type: g
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4.x-2.6.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.2.x-3.xopt_hash: 20744
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 0
+win_type: 0
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.2.x-3.x (no timestopt_hash: 294
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 0
+win_type: 0
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.2.x-3.x (barebone)opt_hash: 3
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 0
+win_type: 0
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 1
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 2
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 2
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 8
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 (Websense crawler)opt_hash: 1318
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1380
+win: 4
+win_type: 2
+win_scale: 6
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 (Websense crawler)opt_hash: 1318
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1380
+win: 4
+win_type: 2
+win_scale: 7
+pay_class: 1
+
+OS Type: g
+OS Class: win
+OS Name: Windows
+OS Flavor: NT kernel 5.xopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: win
+OS Name: Windows
+OS Flavor: NT kernel 5.xopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: win
+OS Name: Windows
+OS Flavor: NT kernel 5.xopt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: win
+OS Name: Windows
+OS Flavor: NT kernel 5.xopt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: win
+OS Name: Windows
+OS Flavor: NT kernel 6.xopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: win
+OS Name: Windows
+OS Flavor: NT kernel 6.xopt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: win
+OS Name: Windows
+OS Flavor: NT kernelopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 0
+win_type: 0
+win_scale: 0
+pay_class: 1
+
+OS Type: g
+OS Class: win
+OS Name: Windows
+OS Flavor: NT kernelopt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 0
+win_type: 0
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Mac OS X
+OS Flavor: 10.xopt_hash: 21101
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 1
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Mac OS X
+OS Flavor: 10.xopt_hash: 21101
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: iOS
+OS Flavor: iPhone or iPadopt_hash: 21101
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 4
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: iOS
+OS Flavor: iPhone or iPadopt_hash: 21101
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 2
+pay_class: 1
+
+OS Type: g
+OS Class: unix
+OS Name: Mac OS X
+OS Flavor: opt_hash: 21101
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 9.xopt_hash: 16833
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 6
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 8.xopt_hash: 16833
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: g
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: opt_hash: 16833
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenBSD
+OS Flavor: 3.xopt_hash: 23769
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenBSD
+OS Flavor: 4.x-5.xopt_hash: 23769
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 8opt_hash: 30051
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 32850
+win_type: 1
+win_scale: 1
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 10opt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 34
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenVMS
+OS Flavor: 8.xopt_hash: 258
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 128
+mss: 1460
+win: 2
+win_type: 3
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenVMS
+OS Flavor: 7.xopt_hash: 258
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 64
+mss: 1460
+win: 61440
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: otherNeXTSTEP
+OS Name: NeXTSTEP
+OS Flavor: opt_hash: 3
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 64
+mss: 1024
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Tru64
+OS Flavor: 4.xopt_hash: 258
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 64
+mss: 1460
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: SYN scanopt_hash: 3
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 1024
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: SYN scanopt_hash: 3
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 2048
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: SYN scanopt_hash: 3
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 3072
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: SYN scanopt_hash: 3
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 4096
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: OS detectionopt_hash: 321
+quirks: 128
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 265
+win: 512
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: OS detectionopt_hash: 498
+quirks: 128
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 1
+win_scale: 10
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: OS detectionopt_hash: 20845
+quirks: 128
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 1
+win_type: 1
+win_scale: 10
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: OS detectionopt_hash: 2596
+quirks: 128
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 536
+win: 16
+win_type: 1
+win_scale: 10
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: OS detectionopt_hash: 32
+quirks: 128
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 640
+win: 4
+win_type: 1
+win_scale: 5
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: OS detectionopt_hash: 2392
+quirks: 128
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1400
+win: 63
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: OS detectionopt_hash: 20845
+quirks: 128
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 265
+win: 31337
+win_type: 1
+win_scale: 10
+pay_class: 1
+
+OS Type: s
+OS Class: !
+OS Name: NMap
+OS Flavor: OS detectionopt_hash: 34586
+quirks: 520
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 3
+win_type: 1
+win_scale: 10
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: p0f
+OS Flavor: sendsyn utilityopt_hash: 30
+quirks: 0
+opt_eol_pad: 18
+ip_opt_len: 0
+ip_ver: 0
+ttl: 192
+mss: 1331
+win: 1337
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: p0f
+OS Flavor: sendsyn utilityopt_hash: 364
+quirks: 0
+opt_eol_pad: 8
+ip_opt_len: 0
+ip_ver: 0
+ttl: 192
+mss: 1331
+win: 1337
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: p0f
+OS Flavor: sendsyn utilityopt_hash: 284
+quirks: 0
+opt_eol_pad: 15
+ip_opt_len: 0
+ip_ver: 0
+ttl: 192
+mss: 1331
+win: 1337
+win_type: 1
+win_scale: 5
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: p0f
+OS Flavor: sendsyn utilityopt_hash: 300
+quirks: 0
+opt_eol_pad: 16
+ip_opt_len: 0
+ip_ver: 0
+ttl: 192
+mss: 1331
+win: 1337
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: p0f
+OS Flavor: sendsyn utilityopt_hash: 2460
+quirks: 0
+opt_eol_pad: 5
+ip_opt_len: 0
+ip_ver: 0
+ttl: 192
+mss: 1331
+win: 1337
+win_type: 1
+win_scale: 5
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: p0f
+OS Flavor: sendsyn utilityopt_hash: 2588
+quirks: 0
+opt_eol_pad: 6
+ip_opt_len: 0
+ip_ver: 0
+ttl: 192
+mss: 1331
+win: 1337
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: p0f
+OS Flavor: sendsyn utilityopt_hash: 2364
+quirks: 0
+opt_eol_pad: 13
+ip_opt_len: 0
+ip_ver: 0
+ttl: 192
+mss: 1331
+win: 1337
+win_type: 1
+win_scale: 5
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: p0f
+OS Flavor: sendsyn utilityopt_hash: 19166
+quirks: 0
+opt_eol_pad: 3
+ip_opt_len: 0
+ip_ver: 0
+ttl: 192
+mss: 1331
+win: 1337
+win_type: 1
+win_scale: 5
+pay_class: 1
+
+OS Type: s
+OS Class: otherBlackberry
+OS Name: Blackberry
+OS Flavor: opt_hash: 2361
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 1452
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: otherNintendo
+OS Name: Nintendo
+OS Flavor: 3DSopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1360
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: otherNintendo
+OS Name: Nintendo
+OS Flavor: Wiiopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 64
+mss: 1460
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: BaiduSpider
+OS Flavor: opt_hash: 5534
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 4
+win_type: 2
+win_scale: 7
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: BaiduSpider
+OS Flavor: opt_hash: 5534
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 4
+win_type: 2
+win_scale: 2
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 3
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 321
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 2064
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 2048
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 258
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 20744
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 1318
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 3.xopt_hash: 294
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 10
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4-2.6opt_hash: 3
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4-2.6opt_hash: 321
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4-2.6opt_hash: 2064
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4-2.6opt_hash: 2048
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4.xopt_hash: 258
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4.xopt_hash: 20744
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4.xopt_hash: 1318
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.4.xopt_hash: 294
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.6.xopt_hash: 258
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.6.xopt_hash: 20744
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.6.xopt_hash: 1318
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Linux
+OS Flavor: 2.6.xopt_hash: 294
+quirks: 1
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 4
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 3
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 258
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2064
+quirks: 4099
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2628
+quirks: 4099
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 10525
+quirks: 4099
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 39093
+quirks: 4099
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 3
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 258
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2064
+quirks: 4099
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 2628
+quirks: 4099
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 10525
+quirks: 4099
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: XPopt_hash: 39093
+quirks: 4099
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 3
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 321
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 258
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 8
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 2064
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 16833
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 8
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 2628
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 8
+pay_class: 1
+
+OS Type: s
+OS Class: win
+OS Name: Windows
+OS Flavor: 7 or 8opt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 128
+mss: 0
+win: 8192
+win_type: 1
+win_scale: 8
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 9.xopt_hash: 258
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 6
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 9.xopt_hash: 16833
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 6
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 9.xopt_hash: 2096
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 6
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 9.xopt_hash: 2628
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 6
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 8.xopt_hash: 258
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 8.xopt_hash: 16833
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 8.xopt_hash: 2096
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 8.xopt_hash: 2628
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 8.x-9.xopt_hash: 321
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 8.x-9.xopt_hash: 36
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: FreeBSD
+OS Flavor: 8.x-9.xopt_hash: 2064
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenBSD
+OS Flavor: 5.xopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenBSD
+OS Flavor: 5.xopt_hash: 258
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 16384
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenBSD
+OS Flavor: 5.xopt_hash: 294
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 16384
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenBSD
+OS Flavor: 5.xopt_hash: 2064
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenBSD
+OS Flavor: 5.xopt_hash: 2361
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 16384
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenBSD
+OS Flavor: 5.xopt_hash: 2628
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 16384
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: OpenBSD
+OS Flavor: 5.xopt_hash: 23769
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 1460
+win: 16384
+win_type: 1
+win_scale: 3
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Mac OS X
+OS Flavor: 10.xopt_hash: 258
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Mac OS X
+OS Flavor: 10.xopt_hash: 36
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Mac OS X
+OS Flavor: 10.xopt_hash: 2064
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Mac OS X
+OS Flavor: 10.xopt_hash: 2096
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Mac OS X
+OS Flavor: 10.xopt_hash: 2628
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Mac OS X
+OS Flavor: 10.xopt_hash: 16557
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Mac OS X
+OS Flavor: 10.xopt_hash: 21101
+quirks: 3
+opt_eol_pad: 1
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 65535
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 6opt_hash: 3
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 255
+mss: 0
+win: 7
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 6opt_hash: 223
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 255
+mss: 0
+win: 7
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 6opt_hash: 1696
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 255
+mss: 0
+win: 7
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 6opt_hash: 43120
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 255
+mss: 0
+win: 7
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 8opt_hash: 3
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 19
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 8opt_hash: 223
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 19
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 8opt_hash: 1696
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 19
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 8opt_hash: 1600
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 19
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 8opt_hash: 43120
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 19
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 8opt_hash: 48792
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 19
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 8opt_hash: 16799
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 19
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 8opt_hash: 58723
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 19
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 10opt_hash: 3
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 37
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 10opt_hash: 258
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 37
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 10opt_hash: 1696
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 37
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 10opt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 37
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 10opt_hash: 43302
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 37
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 10opt_hash: 2604
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 37
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 10opt_hash: 18717
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 37
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Solaris
+OS Flavor: 10opt_hash: 23733
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 37
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: HP-UX
+OS Flavor: 11.xopt_hash: 3
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: HP-UX
+OS Flavor: 11.xopt_hash: 284
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: HP-UX
+OS Flavor: 11.xopt_hash: 2064
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: HP-UX
+OS Flavor: 11.xopt_hash: 2048
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: HP-UX
+OS Flavor: 11.xopt_hash: 15940
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: HP-UX
+OS Flavor: 11.xopt_hash: 362
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: HP-UX
+OS Flavor: 11.xopt_hash: 2361
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: HP-UX
+OS Flavor: 11.xopt_hash: 58585
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 0
+ttl: 64
+mss: 0
+win: 32768
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: otherOpenVMS
+OS Name: OpenVMS
+OS Flavor: 7.xopt_hash: 3
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 64
+mss: 1460
+win: 3993
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: otherOpenVMS
+OS Name: OpenVMS
+OS Flavor: 7.xopt_hash: 258
+quirks: 0
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 64
+mss: 1460
+win: 3993
+win_type: 1
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Tru64
+OS Flavor: 4.xopt_hash: 258
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 64
+mss: 1460
+win: 25
+win_type: 2
+win_scale: 0
+pay_class: 1
+
+OS Type: s
+OS Class: unix
+OS Name: Tru64
+OS Flavor: 4.xopt_hash: 3
+quirks: 3
+opt_eol_pad: 0
+ip_opt_len: 0
+ip_ver: 4
+ttl: 64
+mss: 1460
+win: 25
+win_type: 2
+win_scale: 0
+pay_class: 1
+

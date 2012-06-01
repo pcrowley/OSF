@@ -1,0 +1,1 @@
+cmd_/home/jason/pna/module/pna.ko := ld -r -m elf_x86_64 -T /usr/src/linux-headers-3.0.0-17-generic/scripts/module-common.lds --build-id  -o /home/jason/pna/module/pna.ko /home/jason/pna/module/pna.o /home/jason/pna/module/pna.mod.o
