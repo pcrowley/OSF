@@ -1,2 +1,0 @@
-/home/jason/pna_transfer/module/pna.ko
-/home/jason/pna_transfer/module/pna_main.o /home/jason/pna_transfer/module/pna_config.o /home/jason/pna_transfer/module/pna_flowmon.o /home/jason/pna_transfer/module/pna_rtmon.o /home/jason/pna_transfer/module/pna_rtmon-conlip.o /home/jason/pna_transfer/module/pna_alerts.o /home/jason/pna_transfer/module/pna_rtmon-osf.o /home/jason/pna_transfer/module/pna_osf.o
