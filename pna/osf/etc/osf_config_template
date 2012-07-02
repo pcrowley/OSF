@@ -1,0 +1,11 @@
+Max_log_entries:         10000
+Max_db_entries:          500
+;Autolog modes:
+;0=Off
+;1=Dump logs every n seconds
+;2=Dump logs once capacity reaches certain percentage
+;3=1 and 2
+Autolog mode:            0
+Capacity poll time(sec): 1
+Capacity percentage:     100
+Log dump wait time(sec): 10
