@@ -1,0 +1,17 @@
+.svn
+*.o
+*.ko
+*.ko.unsigned
+*.log
+irq_count.*
+*.pyc
+*.ko.cmd
+*.ko.unsigned.cmd
+*.o.cmd
+*.mod.c
+service/config
+.tmp_versions/
+Module.symvers
+modules.order
+user/user_message
+user/session

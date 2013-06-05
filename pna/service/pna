@@ -1,0 +1,241 @@
+#!/bin/bash
+#
+# Startup/shutdown script for the Passive Network Appliance (PNA).
+# 
+# This script can be used to start/stop the main PNA module, any
+# additional real-time monitors needed (on-demand), and associated
+# user-space helper routines.
+#
+# Configuration settings are in "config"
+# 
+# No changes need to be made to this file.
+#
+
+SERVICE=pna
+SCRIPT_DIR=$(dirname $(readlink -f $0))
+CONFIG=$SCRIPT_DIR/config
+
+# Load the configuration
+if [ -e $CONFIG ] ; then
+    source $CONFIG
+else
+    echo "Configuration file missing: $CONFIG" >&2
+    exit 1
+fi
+
+# PNA programs
+PNA_MODULE="$PNA_BASE/module/pna.ko"
+USER_MESSAGE="$PNA_BASE/user/user_message"
+
+# System programs
+IFCONFIG="/sbin/ifconfig"
+INSMOD="/sbin/insmod"
+RMMOD="/sbin/rmmod -w"
+LSMOD="/sbin/lsmod"
+
+##
+# Helper routine to convert a dotted quad IP into a hex word
+##
+ip2hex () {
+    IP=$1
+    printf "0x%02x%02x%02x%02x\n" $(echo "$IP" | sed "s/\./ /g")
+}
+
+##
+# Helper routine to set affinities on interface(s)
+##
+affinitize () {
+    iface=$1
+    # Find IRQs for iface
+    IRQS=$(awk -F: '/'${iface}'[^\n]/{ print $1 }' /proc/interrupts)
+    if [ -z "$IRQS" ] ; then
+        IRQS=$(awk -F: '/'${iface}'/{ print $1 }' /proc/interrupts)
+    fi
+    NPROCS=${#PNA_SESSIONPROCS[@]}
+    for irq in $IRQS ; do
+        # XXX: Not a fan of this SESSIONPROCS mapping thing
+        affinity=$((1 << ${PNA_SESSIONPROCS[$irq % $NPROCS]}))
+        affinity=$(printf "%x" $affinity)
+        name=$(basename /proc/irq/$irq/${iface}*)
+        echo -e "\t$name ($irq) affinity $affinity"
+        echo $affinity > /proc/irq/$irq/smp_affinity
+    done
+}
+
+##
+# Check for and disable any known conflicting services
+##
+conflicts () {
+    action=$1
+    service irqbalance status > /dev/null 2>&1
+    [ $? -eq 0 -o $? -eq 3 ] && service irqbalance $action
+}
+
+##
+# Simple routine to error out of the script
+##
+error () {
+    echo
+    echo "Error loading module and services ($1)"
+    exit $1
+}
+
+##
+# Prepare and load the PNA module
+##
+start () {
+    PARAMS=$*
+
+    echo "Starting $SERVICE ..."
+
+    [ -f $PNA_MODULE ] || error 1
+    [ -f $USER_MESSAGE ] || error 1
+
+    # Disable conflicting services
+    conflicts "stop"
+
+    # Bring up and set affinity on PNA interfaces
+    for iface in ${PNA_IFACE/,/ } ; do
+        $IFCONFIG $iface up promisc
+        affinitize $iface
+    done
+
+    # Set up parameters for kernel modules
+    PNA_PREFIX=$(ip2hex "$PNA_PREFIX")
+    PNA_MASK=$(ip2hex "$PNA_MASK")
+    PNA_ARGS="pna_iface=\"$PNA_IFACE\""
+    PNA_ARGS="$PNA_ARGS pna_prefix=$PNA_PREFIX"
+    PNA_ARGS="$PNA_ARGS pna_mask=$PNA_MASK"
+    PNA_ARGS="$PNA_ARGS $PNA_OPTIONS"
+    PNA_ARGS="$PNA_ARGS $PARAMS"
+    # Load the kernel module
+    $INSMOD $PNA_MODULE $PNA_ARGS
+    [ $? -eq 0 ] && touch /var/run/$SERVICE.kmod || error 2
+
+    # Set up and start the user-space logging monitor(s)
+    mkdir -p "$PNA_LOGDIR"
+    ARGS="-v -d $PNA_LOGDIR"
+    nohup ${USER_MESSAGE} $ARGS > user_message.log 2>&1 &
+    PID=$!
+    [ $? -eq 0 ] && echo $PID >> /var/run/$SERVICE.pid
+
+    # Set processor affinity if desired
+    if [ $PNA_MONPROCS ] ; then
+        /bin/taskset -cp $PNA_MONPROCS $PID > /dev/null 2>&1
+        affinity=$(/bin/taskset -p $PID | awk '{print $6}')
+        echo -e "\tuser_message ($PID) affinity $affinity"
+    fi
+
+    # Record and log any useful data (as needed)
+    date +%s.%N >> irq_count.start
+    grep "\(${PNA_IFACE/,/\|}\)" /proc/interrupts >> irq_count.start
+
+
+    echo "$SERVICE started successfully"
+}
+
+##
+# Routine to bring down all the services for the PNA
+##
+stop () {
+    echo "Stopping $SERVICE ..."
+
+    # Conclude and logging of useful data
+    date +%s.%N >> irq_count.stop
+    grep "\(${PNA_IFACE/,/\|}\)" /proc/interrupts >> irq_count.stop
+
+    # Take the user-space process
+    [ -f /var/run/$SERVICE.pid ] && kill $(cat /var/run/$SERVICE.pid)
+    rm -f /var/run/$SERVICE.pid
+
+    # Determine if any rtmons are loaded (and unload them)
+    RTMONS=$($LSMOD | grep "\<$SERVICE\>" | awk '{print $4}')
+    for mon in ${RTMONS/,/ } ; do
+        unload $mon
+    done
+
+    # Unload the main PNA module
+    if [ -f /var/run/$SERVICE.kmod ] ; then
+        $RMMOD $PNA_MODULE
+        rm -f /var/run/$SERVICE.kmod
+    fi
+
+    # De-affinitize the interface(s) and take them down
+    for iface in ${PNA_IFACE/,/ } ; do
+        # unset CPU affinities
+        for f in /proc/irq/*/$iface*/../smp_affinity ; do
+            [ -f $f ] && cat /proc/irq/default_smp_affinity > $f
+        done
+        # Take down PNA interface
+        $IFCONFIG $iface down
+    done
+
+    # Re-load any services that were stopped
+    conflicts "start"
+
+    echo "$SERVICE stopped successfully"
+}
+
+##
+# Load a real-time monitor into the kernel.
+##
+load () {
+    module=$1
+    name=$(basename $module .ko)
+
+    # Make sure the PNA module is loaded (error if not)
+    [ -f /var/run/$SERVICE.kmod ] || error 3
+
+    # Try to find the path for the monitor
+    [ -f $module ] || module=$module.ko
+    [ -f $module ] || module=monitors/$module
+    [ -f $module ] || error 4
+
+    # Insert the monitor
+    $INSMOD $module
+    [ $? -eq 0 ] && touch /var/run/$name.kmod || error 5
+    echo "PNA monitor $name loaded"
+}
+
+##
+# Unload a real-time monitor from the kernel
+##
+unload () {
+    module=$1
+    name=$(basename $module .ko)
+    [ -f /var/run/$name.kmod ] && $RMMOD $name
+    echo "PNA monitor $name unloaded"
+}
+
+command=$1
+shift 1
+case $command in
+    start)
+        start $*
+    ;;
+    stop)
+        stop
+    ;;
+    load)
+        load $*
+    ;;
+    unload)
+        unload $*
+    ;;
+    restart)
+        stop
+        start $*
+    ;;
+    status)
+        RTMONS=$($LSMOD | grep "\<$SERVICE\>" | awk '{print $4}')
+        [ $? -eq 0 ] || exit 1
+        echo "PNA is loaded"
+        for mon in ${RTMONS/,/ } ; do
+            echo " \`- rtmon: $mon is loaded"
+        done
+        exit 0
+    ;;
+    *)
+        echo $"Usage: $SERVICE {start|stop|restart|status|load|unload}"
+        exit 3
+esac
