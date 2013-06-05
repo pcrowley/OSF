@@ -1,2 +1,0 @@
-COUNTER = $1
-echo $COUNTER
