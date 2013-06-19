@@ -42,10 +42,17 @@
 
 #include "fnv.h"
 
+static int count;
+
 static int http_init(void);
 static void http_release(void);
 static int http_hook(struct session_key *, int, struct sk_buff *, unsigned long *);
 static void http_clean(void);
+
+//Precalculated HTTP HF checksums:
+u32 http_hf_checksums[997] = { 0, 5400750, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1024, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 194456, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 195480, 0, 164664590, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 180672, 0, 0, 0, 1450854, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1354162, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9266, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1302, 0, 0, 88044, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1341284, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1444004, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2370, 0, 0, 0, 0, 0, 0, 0, 0, 164661914, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1345380, 0, 0, 10400, 0, 0, 0, 0, 0, 0, 176906, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2901720, 0, 0, 23384, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 310576, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2530, 5393310, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1348530, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2626, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5670, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2694, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 725554, 0, 0, 2732, 0, 0, 0, 0, 0, 0, 2695636, 0, 0, 0, 0, 0, 0, 0, 5401502, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 649248166, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5392558, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11774, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6418528, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2850, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20582970, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5107552, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20728566, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25213102, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11944, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+u8 http_hf_convert[997] = { 1, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 31, 0, 40, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 41, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 34, 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 19, 0, 0, 0, 0, 0, 0, 0, 0, 38, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 2, 0, 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 27, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 42, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 0, 21, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 35, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 36, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 33, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 37, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
 
 struct pna_rtmon http = {
     .name = "Null monitor",
@@ -93,6 +100,11 @@ u32	http_filter_list[20] = {
 #define LOG_PROC_NAME "http_log"
 #define DB_PROC_NAME "http_db"
 
+//Defining preset values for http_match:
+//MAX_HF = Maximum number of Header Fields
+#define MAX_HF 100
+#define ORDER_DEPTH 20
+#define MAX_SUBSTRING 30 
 int path_len;
 char path[MAX_STR];
 
@@ -179,16 +191,6 @@ struct http_print{
 	u32	db_entry;
 	u32	src_ip;
 	u32	dst_ip;
-	u32	opt_hash;
-	u32	quirks;
-	u8	opt_eol_pad;
-	u8	ip_opt_len;
-	u8	ttl;
-	u16	mss;
-	u16	win;
-	u8	win_type;
-	u8	win_scale;
-	u8	pay_class;
 };
 
 //OSF Hashmap format
@@ -201,13 +203,12 @@ struct http_info{
 //OSF Signature format
 struct http_sig{
 	struct http_print print;
-	u8 wildcards;
-	u8 ack;//0 for syn, 1 for ack
-	u32	score;
-	char	os_type;
-	char	os_class[5];
-	char	os_name[20];
-	char	os_flavor[20];
+	u8	version;
+	u64	inset;
+	u64	outset;
+	char	hf_values[ORDER_DEPTH][MAX_SUBSTRING];
+	u8	rule_table[ORDER_DEPTH][MAX_HF];
+	u8	transition_table[ORDER_DEPTH][MAX_HF];
 };
 	
 //OSF Primary Data Pointers:
@@ -222,7 +223,7 @@ void *all_zeroes;
 struct http_control	*control_ptr;
 struct http_control	new_control;
 struct http_print	*log_ptr;
-struct http_info		*log_info_ptr;
+struct http_info	*log_info_ptr;
 struct http_sig		*db_ptr;
 
 int http_control_open(struct inode *inode, struct file *filep){
@@ -366,41 +367,12 @@ int http_db_open(struct inode *inode, struct file *filep){
 	return 0;
 }
 
-void gen_db_info(struct http_sig *list){
-	unsigned int i;
-	first_ack_log = 0;
-	for(i=1 ; i<(list[0].print.dst_ip/sizeof(struct http_sig)) ; i++){
-		if(first_ack_log == 0 && list[i].ack == 1){
-			first_ack_log = i;
-		}
-		if(list[i].print.db_entry == 0){
-			break;
-		}
-	}
-	control.cur_db_entries = i;
+void print_print(struct http_print *print){
 	return;
 }
 
-void print_print(struct http_print *print){
-	printk("\tdb_entry:    %u\n", print->db_entry);
-	printk("\tsrc_ip:      %u\n", print->src_ip);
-	printk("\tdst_ip:      %u\n", print->dst_ip);
-	printk("\topt_hash:    %u\n", print->opt_hash);
-	printk("\tquirks:      %u\n", print->quirks);
-	printk("\topt_eol_pad: %u\n", print->opt_eol_pad);
-	printk("\tip_opt_len:  %u\n", print->ip_opt_len);
-	printk("\tttl:         %u\n", print->ttl);
-	printk("\tmss:         %u\n", print->mss);
-	printk("\twin:         %u\n", print->win);
-	printk("\twin_type:    %u\n", print->win_type);
-	printk("\twin_scale:   %u\n", print->win_scale);
-	printk("\tpay_class:   %u\n", print->pay_class);
-}
-
 void print_sig(struct http_sig *sig){
-	printk("%c,%s,%s,%s:\n", sig->os_type, sig->os_class, sig->os_name, sig->os_flavor);
-	print_print(&sig->print);
-	printk("\twildcards:   %u\n", sig->wildcards);
+	return;
 }
 
 void debug_http_db(){
@@ -419,10 +391,10 @@ int http_db_release(struct inode *inode, struct file *filep){
 		memcpy(&db, db_ptr, control.num_db_entries * sizeof(struct http_sig));
 	}*/
 	memcpy(db, db_ptr, control.num_db_entries * sizeof(struct http_sig));
-	gen_db_info(db);
 	//debug_http_db();
 	//hook_lock = 0;
 	vfree(db_ptr);
+	control.cur_db_entries = db[0].print.src_ip;
 	setup_complete = 1;
 	return 0;
 }
@@ -588,15 +560,76 @@ int http_filter(char *data){
 	return 1;
 }
 
-//Defining preset values for http_match:
-//MAX_HF = Maximum number of Header Fields
-#define MAX_HF 100
+inline u32 calculate_hf(char *data, u32 start, u32 end){
+	u32 total=0;
+	u32 total_mod;
+	u32 i;
+	for(i=start; i < end; i++){
+		if(data[i] == ' '){
+			continue;
+		}
+		if(data[i] == ':'){
+			break;
+		}
+		total = (total + (u8)data[i]) * 2;
+	}
+	if(total == 0){
+		return 0;
+	}
+	total_mod = total % 997;
+	if(total == http_hf_checksums[total_mod]){
+		return http_hf_convert[total_mod];
+	}
+	return 0;
+}
+
+int substring_match(char *data, u32 start, u32 end, char *match){
+	u32 i = 0;
+	u32 m = start;
+	u32 p = start;
+	u32 emergency = 0;
+	char first = match[0];
+	while(m+i < end){
+		emergency++;
+		if(emergency >= 100){
+			return 1;
+		}
+		if(match[i] == '\0'){
+			return 0;
+		}
+		if((p == m) && (data[m+i] == first)){
+			p = m+i;
+		}
+		if(match[i] == data[m+i]){
+			i++;
+		}
+		else if(m != p){
+			m = p;
+			i = 0;
+
+		}
+		else{
+			i = 0;
+			m++;
+			p = m;
+		}
+		
+	}
+	return 1;
+}
+
 int http_match(char *data){
 	u32	hf_pos[MAX_HF];
+	u32	hf_value_pos[MAX_HF];
+	u32	hf_end_pos[MAX_HF];
 	u32	hf_val[MAX_HF];
 	int pos = 0;
 	int cur_hf = 0;
-	int i;
+	int max_hf;
+	int i, j, k, l;
+	u8 next_list;
+	u64	inset=0;
+	int correct_flag;
 	//We already know that the first line is correct, so we have to skip it:
 	while(data[pos] != '\r'){
 		pos++;
@@ -618,9 +651,13 @@ int http_match(char *data){
 	while(cur_hf < MAX_HF){
 		hf_pos[cur_hf] = pos;
 		cur_hf++;
+		if(data[pos] == ':'){
+		hf_value_pos[cur_hf] = pos;
+		}
 		while(data[pos] != '\r'){
 			pos++;
 		}
+		hf_end_pos[cur_hf] = pos;
 		pos++;
 		if(data[pos] != '\n'){
 			printk("HTTP Parse Error\n");
@@ -639,6 +676,59 @@ int http_match(char *data){
 			}
 		}
 	}
+	max_hf = cur_hf;
+	//Everything now broken up correctly, starting fingerprinting here:
+	//First, we have to figure out which header fields we need:
+	//Our checksums have been precalculated, and are included at compile time
+	//as the variables http_hf_checksums and http_hf_convert
+	correct_flag = 0;
+	for(i=0 ; i < max_hf ; i++){
+		hf_val[i] = calculate_hf(data, hf_pos, hf_value_pos);
+		if(hf_val[i] != 0){
+			inset = inset | (1 << hf_val[i]);
+		}
+	}
+	//We now have everything we need to perform the match, we just have
+	//to iterate down the db and narrow it down 3 ways:
+	//Set operations to detect if the right fields are there,
+	//An automata to make sure the fields are in the right order,
+	//And check the HF value substrings to see if they match
+	for(i=0 ; i < control.cur_db_entries ; i++){
+		correct_flag = 1;
+		if((inset & db[i].inset) != db[i].inset){
+			continue;
+		}
+		if((inset & db[i].outset) != 0){
+			continue;
+		}
+		//Okay, so we know that the right fields are here, now let's check the ordering:
+		next_list = 0;
+		for(j=0 ; j < max_hf ; j++){
+			if(hf_val[j] == 0){
+				continue;
+			}
+			if(db[i].rule_table[next_list][hf_val[j]] == 0){
+				continue;
+			}
+			if(db[i].rule_table[next_list][hf_val[j]] == 1){
+				break;
+			}
+			if(db[i].rule_table[next_list][hf_val[j]] == 2){
+				next_list = db[i].transition_table[next_list][hf_val[j]];
+				continue;
+			}
+			if(db[i].rule_table[next_list][hf_val[j]] == 3){
+				next_list = db[i].transition_table[next_list][hf_val[j]];
+				if(substring_match(data, hf_value_pos, hf_end_pos, db[i].hf_values[next_list]) == 0){
+					continue;
+				}
+				else{
+					break;
+				}
+			}
+		}
+	}
+
 	return 0;
 }
 
@@ -650,9 +740,9 @@ static int http_hook(struct session_key *key, int direction,
 	struct http_print *new_print;
 	unsigned int offset=0;
 	u8 *data_ptr;
-	/*if(setup_complete == 0){
+	if(setup_complete == 0){
 		return 0;
-	}*/
+	}
 	ip = (struct iphdr *)skb_network_header(skb);
 	if(!ip){
 		return 0;
@@ -673,20 +763,13 @@ static int http_hook(struct session_key *key, int direction,
 	if(http_filter(data_ptr) != 0){
 		return 0;
 	}
-	/*
-	while(hook_lock == 1){
-		//set_current_state(TASK_UNINTERRUPTIBLE);
-		//schedule_timeout(100);
-		//hook_lock_ack = 1;
-	}*/
-	//hook_lock_ack = 0;
 	num_in_hook++;
-	/*new_print = get_next_print(ip->saddr);
+	new_print = get_next_print(ip->saddr);
 	if(new_print == NULL){
 		control.missed_logs++;
 		num_in_hook--;
 		return -1;
-	}*/
+	}
 	//HTTP test
 	http_match((char *)data_ptr);
 	num_in_hook--;
@@ -731,6 +814,7 @@ static int http_init(void)
 {
 	struct proc_dir_entry *proc_node;
 	int i;
+	count= 0;
 	db_alloc_f = 0;
 	log_alloc_f = 0;
 	setup_complete = 0;
@@ -767,6 +851,7 @@ static int http_init(void)
 
 static void http_release(void)
 {
+	printk("Count %d\n", count);
 	while(num_in_hook > 0){
 		//Do nothing
 	}
