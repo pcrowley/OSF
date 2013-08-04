@@ -1,5 +1,5 @@
 while :
 do
 	./perf_read
-	sleep 60
+	sleep 10
 done

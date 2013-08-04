@@ -328,8 +328,9 @@ static void pna_perflog(struct sk_buff *skb, int dir)
                     break;
                 }
 //#if LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,32)
-                /* numbers from the NIC */
-/*                stats = dev_get_stats(dev);
+/* numbers from the NIC */
+/*
+		stats = dev_get_stats(dev);
                 pna_info("pna %s_packets:%lu,%s_fifo_overruns:%lu,%s_missed:%lu\n",
                         dev->name, stats->rx_packets - perf->dev_last_rx[i],
                         dev->name, stats->rx_fifo_errors - perf->dev_last_fifo[i],
@@ -339,7 +340,8 @@ static void pna_perflog(struct sk_buff *skb, int dir)
                 perf->dev_last_fifo[i] = stats->rx_fifo_errors;
 */
 /*#else*/
-                dev_get_stats(dev, &stats);
+
+dev_get_stats(dev, &stats);
                 pna_info("pna %s_packets:%llu,%s_fifo_overruns:%llu,%s_missed:%lli\n",
                         dev->name, stats.rx_packets - perf->dev_last_rx[i],
                         dev->name, stats.rx_fifo_errors - perf->dev_last_fifo[i],
@@ -347,6 +349,7 @@ static void pna_perflog(struct sk_buff *skb, int dir)
                 perf->dev_last_rx[i] = stats.rx_packets;
                 perf->dev_last_drop[i] = stats.rx_missed_errors;
                 perf->dev_last_fifo[i] = stats.rx_fifo_errors;
+
 /*#endif*/ 
             }
         }

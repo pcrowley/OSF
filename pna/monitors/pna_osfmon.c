@@ -553,218 +553,35 @@ struct osf_print *get_next_print(u32 key){
 	return ret;
 }
 
-void parse_iphdr(struct osf_print *print, struct sk_buff *skb, struct iphdr *ip, struct tcphdr *tcp){
-	u8 ipflags;
-	print->src_ip = ip->saddr;
-	print->dst_ip = ip->daddr;
-	print->ip_opt_len = ((ip->ihl)*4)-20;
-	print->ttl = ip->ttl;
-	//XXX
+//Silas, edit this function:
+int compute_sig(struct sk_buff *skb, struct osf_print *print){
 	/*
-	if(print->ttl <= 32){
-		print->ttl = 32;
-	}
-	else if(print->ttl > 32 && print->ttl <= 64){
-		print->ttl = 64;
-	}
-	else if(print->ttl > 64 && print->ttl <=128){
-		print->ttl = 128;
-	}
-	else{
-		print->ttl = 255;
-	}
+	Some notes on what everything does:
+	First, you can ignore the second argument to this function for now
+	(the variable "struct osf_print *print).  This function is called
+	every time the machine recieves a TCP SYN or SYN+ACK packet.
+	The pointer skb points directly to the start of the packet.  You can
+	access the start of the IP and TCP headers in the following way:
+		IP header:
+		struct iphdr *ip;
+		ip = (struct iphdr *)skb_network_header(skb);
+		TCP header:
+		struct tcphdr *tcp;
+		tcp = (struct tcphdr *)skb_network_header(skb);
+	These lines will leave you with two pointers, ip and tcp, that
+	point directly to the start of the ip and tcp headers.  You
+	can look up the iphdr and tcphr structs to find ways to directly
+	access certain fields.  For example, ip->saddr gives the value
+	of the IP source address
+
+	To both debug and print results, use the printk function.
+	printk will output text directly to the file /var/log/kern.log
 	*/
-	print->quirks = 0;
-	ipflags = (u8)((ip->frag_off) >> 5);
-	printk("parse_iphdr: ipflags %u %u\n", ip->frag_off, ipflags);
-	if((ipflags & 2) == 2){
-		print->quirks = print->quirks | 1;
-		if(ip->id != 0){
-			print->quirks = print->quirks | (1<<1);
-		}
-	}
-	else if(ip->id == 0){
-		print->quirks = print->quirks | (1<<2);
-	}
-	if((ip->tos & 3)!=0){
-		print->quirks = print->quirks | (1<<3);
-	}
-	if((ipflags & 4) == 4){
-		print->quirks = print->quirks | (1<<4);
-	}
-	return;
-}
-
-void parse_tcphdr(struct osf_print *print, struct sk_buff *skb, struct iphdr *ip,  struct tcphdr *tcp){
-	u16 wina;
-	u16 winb;
-	wina = tcp->window;
-	winb = tcp->window;
-	wina = wina << 8;
-	winb = winb >> 8;
-	print->win = wina | winb;
-	//print->win = *(((u8 *)tcp->window)+1);
-	//print->win = print->win << 8;
-	//print->win = *((u8 *)tcp.window);
-	if(tcp->seq == 0){
-		print->quirks = print->quirks | (1<<6);
-	}
-	if(tcp->ack_seq != 0 && tcp->ack == 0){
-		print->quirks = print->quirks | (1<<7);
-	}
-	if(tcp->ack_seq == 0 && tcp->ack != 0){
-		print->quirks = print->quirks | (1<<8);
-	}
-	if(tcp->urg_ptr != 0 && tcp->urg == 0){
-		print->quirks = print->quirks | (1<<9);
-	}
-	if(tcp->urg != 0){
-		print->quirks = print->quirks | (1<<10);
-	}
-	if(tcp->psh != 0){
-		print->quirks = print->quirks | (1<<11);
-	}
-	return;
-}
-
-int get_tcp_option(struct sk_buff *skb, struct tcphdr *tcp, struct osf_print *print, u8 *type, u8 *offset){
-	u8 mss_temp;
-	u8 *cur_ptr;
-	u8 *max_ptr;//Pointer to first invalid address after skb
-	max_ptr = ((u8 *)skb)+skb->truesize;
-	type[0] = 0;
-	if(*offset >= (tcp->doff * 4)){
-		type[0] = -1;
-		return -1;
-	}
-	cur_ptr = ((u8 *)tcp)+*offset;
-	if(cur_ptr >= max_ptr){
-		//return 1;//Malformed packet
-	}
-	type[0] = cur_ptr[0];
-	if(type[0] == 0){
-		offset[0]++;
-		return -1;
-	}
-	if(type[0] == 1){
-		offset[0]++;
-		return 0;
-	}
-	cur_ptr++;
-	if(cur_ptr >= max_ptr){
-		//return 1;//Malformed packet
-	}
-	offset[0] = offset[0] + cur_ptr[0];
-	if(cur_ptr[0] == 0){
-		offset[0]++;
-		return 1;//Malformed packet
-	}
-	cur_ptr++;
-	if(cur_ptr >= max_ptr){
-		//return 1;
-	}
-	if(type[0] == 2){
-		//value[0] = cur_ptr[0];
-		//value[0] = value[0] << 8;
-		//value[0] = value[0] | cur_ptr[1];
-		if(cur_ptr+1 >= max_ptr){
-			//return 1;
-		}
-		print->mss = cur_ptr[0];
-		print->mss = print->mss << 8;
-		print->mss = print->mss | cur_ptr[1];
-	}
-	else if(type[0] == 3){
-		//Check covered above
-		print->win_scale = cur_ptr[0];
-		if(print->win_scale > 14){
-			print->quirks = print->quirks | (1<<16);
-		}
-	}
-	else if(type[0] == 8){
-		if(cur_ptr+7 >= max_ptr){
-			//return 1;
-		}
-		if(*((u32*)cur_ptr) == 0){
-			print->quirks = print->quirks | (1<<12);
-		}
-		if((*((u32*)(cur_ptr+4)) != 0) && tcp->ack == 0){
-			print->quirks = print->quirks | (1<<13);
-		}
-	}
 	return 0;
 }
 
-u32 compute_opt_hash(void *key, u8 len){
-	return (u32)fnv_32a_buf(key, len, FNV1_32A_INIT);
-}
-
-void debug_tcp_options(struct tcphdr *tcp, struct sk_buff *skb){
-	u8 *cur_ptr;
-	u8 offset;
-	u8 *max_ptr;
-	offset = 20;
-	max_ptr = ((u8 *)skb)+skb->truesize;
-	printk("debugOpt3: ");
-	while(offset < tcp->doff * 4){
-		cur_ptr = ((u8 *)tcp)+offset;
-		//if(cur_ptr >= max_ptr){
-		//	break;
-		//}
-		printk("%u ", *cur_ptr);
-		offset++;
-	}
-	printk("\n");
-}
-
-void parse_tcpopts(struct osf_print *print, struct sk_buff *skb, struct iphdr *ip, struct tcphdr *tcp){
-	u8 type;
-	int temp;
-	u32 value;
-	u8 *cur_ptr;
-	u8 *max_ptr;
-	u8 offset;
-	u8 order[40] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-	u8 i;
-	i=0;
-	max_ptr = ((u8 *)skb)+skb->truesize;
-	offset = 20;
-	print->opt_eol_pad = 0;
-	debug_tcp_options(tcp, skb);
-	temp = get_tcp_option(skb, tcp, print, &type, &offset);
-	printk("tcpopt ordering: ");
-	//while(get_tcp_option(tcp, print, &type, &offset) == 0){
-	while(temp == 0){
-		printk("%u ", type);
-		order[i++]=type;
-		if(i >= 40){
-			break;
-		}
-		temp = get_tcp_option(skb, tcp, print, &type, &offset);
-	}
-	printk("\n");
-	if(type == 0 && temp != 1){
-		while(offset < tcp->doff * 4){
-			print->opt_eol_pad++;
-			cur_ptr = ((u8 *)tcp)+offset;
-			if(cur_ptr >= max_ptr){
-				//break;//Something went wrong
-			}
-			if(*cur_ptr != 0){
-				print->quirks = print->quirks | (1<<14);
-			}
-			offset++;
-
-		}
-	}
-	if(type == 0){
-		i = i + 1 + print->opt_eol_pad;
-	}
-	//DEBUG
-	print->opt_hash = compute_opt_hash((void *)order, i);
-	return;
-}
-
+//The old compute_sig, included for reference
+/*
 int compute_sig(struct sk_buff *skb, struct osf_print *print){
 	struct iphdr *ip;
 	struct tcphdr *tcp;
@@ -777,7 +594,7 @@ int compute_sig(struct sk_buff *skb, struct osf_print *print){
 	parse_tcphdr(print, skb, ip, tcp);
 	parse_tcpopts(print, skb, ip, tcp);
 	return 0;
-}
+}*/
 
 inline int specific_match(struct osf_print *print, struct sk_buff *skb, int i){
 	//Returns 0 if no match, 1 if match, -1 if error (if necessary).
@@ -992,7 +809,6 @@ static int osf_hook(struct session_key *key, int direction,
 		return -1;
 	}
 	compute_sig(skb, new_print);
-	match_sig(new_print, skb);
 	num_in_hook--;
     	return 0;
 }
