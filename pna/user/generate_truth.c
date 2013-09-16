@@ -12,6 +12,7 @@ void classify(char *string, unsigned int class, int index){
 	int i;
 	result[index] = class;
 	classified[index] = 1;
+	printf("%s", string);
 	for(i=0 ; i < total_lines ; i++){
 		if(classified[i] == 1){
 			continue;

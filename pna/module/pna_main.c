@@ -277,8 +277,8 @@ static void pna_perflog(struct sk_buff *skb, int dir)
     __u64 t_interval;
     __u64 fps_in, Mbps_in, avg_in;
     __u64 fps_out, Mbps_out, avg_out;
-    //pna_link_stats stats;
-    struct rtnl_link_stats64 stats;
+    pna_link_stats stats;
+    //struct rtnl_link_stats64 stats;
     int i;
     struct net_device *dev;
     struct pna_perf *perf = &get_cpu_var(perf_data);
@@ -329,7 +329,7 @@ static void pna_perflog(struct sk_buff *skb, int dir)
                 }
 //#if LINUX_VERSION_CODE <= KERNEL_VERSION(2,6,32)
 /* numbers from the NIC */
-/*
+
 		stats = dev_get_stats(dev);
                 pna_info("pna %s_packets:%lu,%s_fifo_overruns:%lu,%s_missed:%lu\n",
                         dev->name, stats->rx_packets - perf->dev_last_rx[i],
@@ -338,9 +338,9 @@ static void pna_perflog(struct sk_buff *skb, int dir)
                 perf->dev_last_rx[i] = stats->rx_packets;
                 perf->dev_last_drop[i] = stats->rx_missed_errors;
                 perf->dev_last_fifo[i] = stats->rx_fifo_errors;
-*/
-/*#else*/
 
+/*#else*/
+/*
 dev_get_stats(dev, &stats);
                 pna_info("pna %s_packets:%llu,%s_fifo_overruns:%llu,%s_missed:%lli\n",
                         dev->name, stats.rx_packets - perf->dev_last_rx[i],
@@ -349,7 +349,7 @@ dev_get_stats(dev, &stats);
                 perf->dev_last_rx[i] = stats.rx_packets;
                 perf->dev_last_drop[i] = stats.rx_missed_errors;
                 perf->dev_last_fifo[i] = stats.rx_fifo_errors;
-
+*/
 /*#endif*/ 
             }
         }

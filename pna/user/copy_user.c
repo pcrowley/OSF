@@ -27,6 +27,13 @@ struct copy_table {
 struct copy_table table;
 struct copy_table table_dest;
 
+void *fast_memcpy(void *__restrict b, const void *__restrict a, size_t n){
+	char *s1 = b;
+	const char *s2 = a;
+	for(; 0<n; --n)*s1++ = *s2++;
+	return b;
+}
+
 int copy_logs(){
 	int fd;
 	int size;
@@ -70,7 +77,7 @@ int main(int argc, char **argv){
 	FILE *fp;
 	total = 0;
 	i=0;
-	//while(1==1){
+	while(1==1){
 		read_logs(argv);
 		a = table_dest.start;
 		b = table_dest.end;
@@ -85,7 +92,7 @@ int main(int argc, char **argv){
 		printf("%u\n", total);
 		i = 0;
 		}
-	//}
+	}
 	fp = fopen("table.out", "w");
 	fwrite(&table_dest, sizeof(struct copy_table), 1, fp);
 	fclose(fp);
