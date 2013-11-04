@@ -1,0 +1,8 @@
+library(package="randomForest")
+rf_data <- read.table(file="rf_data.txt", sep=",")
+rf_data_test <- read.table(file="rf_data_test.txt", sep=",")
+rf_truth <- as.factor(t(read.table(file="rf_truth.txt")))
+rf_truth_test <- as.factor(t(read.table(file="rf_truth_test.txt")))
+test_rf <- randomForest(x=rf_data, y=rf_truth, ntree=5000, mtry=15)
+res <- as.matrix(predict(test_rf, rf_data_test))
+write.table(res, "r_real.out", row.names = F, col.names = F, quote = F)

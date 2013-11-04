@@ -12,20 +12,18 @@
 #include <stdint.h>
 #include <unistd.h>
 #include <signal.h>
-#include "svm.h"
+#include <libsvm/svm.h>
 #include "fnv.h"
 #include "pna_hashmap.h"
 
 #define HASHMAP_SIZE 10000
-#define COPY_MAX_PACKETS 1000000
+#define COPY_MAX_PACKETS 100000
 #define COPY_MAX_BYTES 100
 #define OSF_FEATURES 61
 
 #define DEBUG_F1 0
 #define DEBUG_F2 0
-#define DEBUG_F3 0
-#define DEBUG_F4 0
-#define DEBUG_F5 0
+#define DEBUG_F3 1
 //Throughput stages:
 //0, Run normally
 //1, Only Copy
@@ -34,11 +32,7 @@
 #define THROUGHPUT_STAGE 0
 #define STAT_TOTAL 1
 #define SVM_NULL 0
-#define VERBOSE_RUN 0
-#define RUN_ONCE 1
-#define FORCE_SVM_PERCENT 1
-
-int force_svm_counter;
+#define VERBOSE_RUN 1
 struct pna_hashmap *hashmap;
 unsigned long int stat_total;
 
@@ -91,6 +85,7 @@ void *fast_memcpy(void *__restrict b, const void *__restrict a, size_t n){
 
 static unsigned int *extract_features(char data[COPY_MAX_BYTES], unsigned int features[OSF_FEATURES]){
 	int i,j,k,l;
+	features = (unsigned int *)malloc(OSF_FEATURES*sizeof(unsigned int));
 	//ECN
 	uint8_t temp8;
 	for(i=0 ; i < OSF_FEATURES ; i++){
@@ -263,12 +258,6 @@ static unsigned int *extract_features(char data[COPY_MAX_BYTES], unsigned int fe
 		i = i + temp8a;
 	}
 	features[15] = k-15;
-	if(DEBUG_F4){
-		for(i=0 ; i < OSF_FEATURES ; i++){
-			printf("%u ", features[i]);
-		}
-		printf("\n");
-	}
 	return features;
 }
 int copy_logs(){
@@ -327,7 +316,6 @@ void hash_classify(char data[COPY_MAX_BYTES]){
 	uint32_t value;
 	unsigned int temp=-1;
 	unsigned int *hash_ptr=NULL;
-	int temp_flag=0;
 	if(DEBUG_F1){
 		printf("Start extract_features\n");
 	}
@@ -339,9 +327,6 @@ void hash_classify(char data[COPY_MAX_BYTES]){
 		printf("Start fnv_32a_buf\n");
 	}
 	value = fnv_32a_buf((void *)uf_table.features[uf_table.size], OSF_FEATURES * sizeof(unsigned int), FNV1_32A_INIT);
-	if(DEBUG_F4){
-		printf("value, uf_table.size: %u, %u\n", value, uf_table.size);
-	}
 	if(DEBUG_F1){
 		printf("End fnv_32a_buf\n");
 	}
@@ -354,21 +339,8 @@ void hash_classify(char data[COPY_MAX_BYTES]){
 		printf("End hashmap_get\n");
 	}
 	if(DEBUG_F2){
-		printf("%u\n", value);
 	}
-	if(FORCE_SVM_PERCENT){
-		force_svm_counter++;
-		if(force_svm_counter == 100){
-			force_svm_counter = 0;
-		}
-		if(force_svm_counter < FORCE_SVM_PERCENT){
-			temp_flag = 1;
-		}
-		else{
-			temp_flag = 0;
-		}
-	}
-	if((hash_ptr == NULL) || temp_flag){
+	if(hash_ptr == NULL){	
 		hashmap_put(hashmap, &value, &temp);
 		uf_table.size++;
 		uh_table.ip[uh_table.size] = get_ip(data);
@@ -392,7 +364,6 @@ void clear_tables(){
 	uf_table.size=0;
 	uh_table.size=0;
 	hr_table.size=0;
-	force_svm_counter=0;
 }
 
 void null_svm_classify(unsigned int features[OSF_FEATURES]){
@@ -408,30 +379,20 @@ void svm_classify(unsigned int features[OSF_FEATURES]){
 	unsigned int key;
 	unsigned int *value;
 	unsigned int new_value;
-	double temp;
 	int i;
 	int cur_index=0;
 	struct svm_node sample[OSF_FEATURES+1];
 	key = fnv_32a_buf((void *)features, OSF_FEATURES * sizeof(unsigned int), FNV1_32A_INIT);
-	/*for(i=0 ; i < OSF_FEATURES ; i++){
+	for(i=0 ; i < OSF_FEATURES ; i++){
 		if(features[i] == 0){
 			continue;
 		}
 		sample[cur_index].index = i;
 		sample[cur_index].value = (double)features[i];
 		cur_index++;
-	}*/
-	for(i=0 ; i < OSF_FEATURES ; i++){
-		sample[i].index = i+1;
-		sample[i].value = (double)features[i];
-		cur_index++;
 	}
 	sample[cur_index].index = -1;
-	temp = svm_predict(model, sample);
-	if(DEBUG_F5){
-		printf("%f\n", temp);
-	}
-	new_value = (unsigned int)temp;
+	new_value = (unsigned int)svm_predict(model, sample);
 	value = hashmap_get(hashmap, &key);
 	value[1] = new_value;
 	return;
@@ -441,6 +402,7 @@ void memo_classify(uint32_t ip, uint32_t key){
 	unsigned int *class;
 	class = hashmap_get(hashmap, &key);
 	if(DEBUG_F2){
+		printf("Made it\n");
 	}
 	hr_table.ip[hr_table.size] = ip;
 	hr_table.class[hr_table.size] = class[1];
@@ -585,10 +547,9 @@ int main(int argc, char **argv){
 			}
 		}
 		stat_total = stat_total + table.size;
-		if(RUN_ONCE){
-			break;
-		}
 	}
-	printf("%u\n", stat_total);
+	fp = fopen("table.out", "w");
+	fwrite(&table, sizeof(struct copy_table), 1, fp);
+	fclose(fp);
 	return 0;
 }

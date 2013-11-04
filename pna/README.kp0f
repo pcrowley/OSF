@@ -1,0 +1,35 @@
+k-p0f:  A kernel Passive OS Fingerprinter
+Based on p0f by Micheal Zalewski
+
+How to use:
+Before doing anything else, install the development headers for libpcap. Then, simply
+issue a make command to build the PNA and k-p0f kernel module.  To build the userspace
+programs that copy the logs to disk, use the script pna/user/osf_remake.sh. On Ubuntu,
+the following commands issued from the pna directory will build all necessary parts of 
+the PNA and k-p0f:
+
+apt-get install libpcap-dev
+make
+user/osf_remake.sh
+
+To configure the PNA to capture on the correct interface, edit the file at service/config
+with your capture interface.  If you are remotely connecting to the machine, make sure
+you do not list the same interface that you are using to connect, as the connection will
+end.
+
+k-p0f is started up with a series of 3 commands:  Starting the PNA, loading the k-p0f
+monitor, and starting the userspace logging program:
+
+sudo make start
+sudo service/pna load pna_osfmon
+sudo user/auto_osf_log.sh <location> <database> <num_ips> <num_logs> <num_db> <wait_time>
+
+The six arguments to auto_osf_log.sh control how the logs are collected.  They are:
+location:  The directory to store logs in.
+database:  Which fingerprint list to load (by default, this should be at user/osf.fp).
+num_ips:  The max number of IP addresses to track.
+num_logs: The max number of logs to record per IP address.
+num_db:  The max number of fingerprints in osf.fp
+wait_time: The time to wait between recording log files in seconds (Recommend 5-10).
+
+

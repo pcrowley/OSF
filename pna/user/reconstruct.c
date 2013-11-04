@@ -174,7 +174,6 @@ int main(int argc, char **argv){
 		}
 	}
 	return 0;
-	printf("XXX\n");*/
 	for(i=0 ; i < num_logs ; i++){
 		if(first == 0){
 			first = 1;

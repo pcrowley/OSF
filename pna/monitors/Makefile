@@ -14,7 +14,7 @@
 
 # real-time monitor files
 
-obj-m += pna_lipmon.o pna_conmon.o pna_dumper.o pna_nullmon.o pna_perfmon.o pna_bulkcopy.o pna_osfcopy.o pna_osfmon.o hash_32a.o
+obj-m += pna_lipmon.o pna_conmon.o pna_dumper.o pna_nullmon.o pna_perfmon.o pna_bulkcopy.o pna_httpcopy.o pna_osfcopy.o pna_osfmon.o hash_32a.o
 obj-m += pna_hashmap.o murmur3.o
 ifndef BASE
     BASE = $(PWD)/..

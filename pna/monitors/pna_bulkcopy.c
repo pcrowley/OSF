@@ -71,7 +71,7 @@ PNA_PARAM(uint, sample_freq, "Frequency at which to print out packets");
 #define DB_PROC_NAME "copy_db"
 
 #define COPY_MAX_BYTES 100
-#define COPY_MAX_PACKETS 1000000
+#define COPY_MAX_PACKETS 100000
 
 int path_len;
 char path[MAX_STR];
